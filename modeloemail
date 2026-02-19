@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo YOU RH</title>
+</head>
+
+<body style="font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F5F5DC; color: #333333; margin: 0; padding: 0;">
+  <div style="max-width: 680px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; padding: 30px 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    
+    <h1 style="color: #6B2C91; text-align: center; font-size: 32px; margin-bottom: 10px; font-weight: 800; margin-top: 0;">YOU RH</h1>
+    
+    <p style="line-height: 1.6; font-size: 15px; color: #4a5568; margin: 20px 0;">💚 Oi{{#if contact.name}}, {{contact.name}}{{else}}!{{/if}}</p>
+
+    <p style="line-height: 1.6; font-size: 15px; color: #4a5568; margin: 16px 0;">
+      Vi que você solicitou uma <strong style="color: #00D084;">demonstração da YOU RH</strong> há algum tempo, mas acabamos não conseguindo conectar para mostrar como a plataforma pode transformar sua gestão de pessoas.
+    </p>
+
+    <p style="line-height: 1.6; font-size: 15px; color: #4a5568; margin: 16px 0;">
+      Ainda faz sentido conversarmos sobre como simplificar seu RH com recrutamento inteligente, avaliação de desempenho e universidade corporativa em um só lugar?
+    </p>
+
+    <div style="text-align: center; margin: 24px 0;">
+      <a href="https://calendly.com/yourh-demo" style="display: inline-block; background-color: #00D084; color: #ffffff; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: bold; text-align: center;">Sim, quero agendar minha demo →</a>
+    </div>
+
+    <div style="background-color: #F5F5DC; border-left: 4px solid #6B2C91; padding: 20px; border-radius: 8px; margin: 24px 0;">
+      <h3 style="color: #6B2C91; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0; font-weight: 700;">🚀 O que você vai ver na demo:</h3>
+      <ul style="margin: 0; padding-left: 20px; color: #4a5568; font-size: 14px; line-height: 1.5;">
+        <li style="margin-bottom: 6px;">Recrutamento e seleção com banco de talentos inteligente</li>
+        <li style="margin-bottom: 6px;">Avaliação 360° e PDI automatizado</li>
+        <li>Universidade Corporativa com <strong style="color: #00D084;">+450 cursos</strong> prontos</li>
+      </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+      <p style="color: #718096; font-size: 14px; margin-bottom: 12px; line-height: 1.6; margin-top: 0;">
+        Não é prioridade no momento?
+      </p>
+      <a href="{{workflow_url}}" style="display: inline-block; color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 14px; border-bottom: 1px solid #FF6B35; padding-bottom: 2px;">Me avise quando for melhor</a>
+    </div>
+
+    <div style="background-color: #6B2C91; margin: 40px -40px -30px -40px; padding: 30px 40px; border-radius: 0 0 12px 12px; text-align: center;">
+      <p style="margin: 0 0 8px 0; font-weight: 600; color: #ffffff; font-size: 13px; line-height: 1.6;">YOU RH</p>
+      <p style="margin: 0; font-size: 12px; color: #F5F5DC; line-height: 1.6;">
+        Transformar e desenvolver pessoas é o nosso negócio<br>
+        <a href="{{unsubscribe_url}}" style="color: #F5F5DC; text-decoration: underline;">Cancelar inscrição</a> • 
+        <a href="https://yourh.com.br" style="color: #F5F5DC; text-decoration: underline;">yourh.com.br</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

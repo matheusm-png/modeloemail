@@ -3,52 +3,451 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demo YOU RH</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Condição Especial de Março | YouRH</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #f0f0ee;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #1a1a2e;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrapper {
+    width: 100%;
+    background-color: #f0f0ee;
+    padding: 32px 16px;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(80,20,160,0.08);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #5014a0 0%, #6a1ac8 100%);
+    padding: 28px 40px 24px;
+    text-align: center;
+  }
+
+  .logo-text {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+  }
+
+  .logo-text .you { color: #50dc64; }
+
+  .header-tag {
+    display: inline-block;
+    margin-top: 10px;
+    background: rgba(80,220,100,0.2);
+    border: 1px solid rgba(80,220,100,0.5);
+    color: #50dc64;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #f8f7ff 0%, #f0f8f2 100%);
+    padding: 48px 40px 40px;
+    text-align: center;
+    border-bottom: 1px solid #ede8f8;
+  }
+
+  .urgency-badge {
+    display: inline-block;
+    background-color: #fff3ee;
+    border: 1.5px solid #f07850;
+    color: #f07850;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero-headline {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1a1a2e;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .hero-headline .green { color: #3dc455; }
+
+  .hero-sub {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .hero-sub strong { color: #333; }
+
+  /* ── IMPLANTAÇÃO ── */
+  .impl-wrap {
+    padding: 0 40px;
+    margin-top: 32px;
+  }
+
+  .implantacao {
+    background: linear-gradient(135deg, #f0faf2 0%, #e8f8eb 100%);
+    border: 2px solid #50dc64;
+    border-radius: 12px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .impl-icon { font-size: 30px; flex-shrink: 0; }
+
+  .impl-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: #2a9e42;
+  }
+
+  .impl-sub {
+    font-size: 13px;
+    color: #5a8c65;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+
+  /* ── OFERTA ── */
+  .oferta {
+    padding: 40px 40px 28px;
+  }
+
+  .section-eyebrow {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #9b8fc0;
+    margin-bottom: 24px;
+  }
+
+  .steps-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .step-cell {
+    width: 33.333%;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 12px;
+    padding: 22px 12px 18px;
+  }
+
+  .step-cell.s1 {
+    background: linear-gradient(160deg, #f0faf2 0%, #e4f7e7 100%);
+    border: 2px solid #50dc64;
+    border-radius: 12px 0 0 12px;
+  }
+
+  .step-cell.s2 {
+    background: linear-gradient(160deg, #f8f4ff 0%, #f0e8ff 100%);
+    border-top: 2px solid #a070d8;
+    border-bottom: 2px solid #a070d8;
+  }
+
+  .step-cell.s3 {
+    background: linear-gradient(160deg, #fff5f1 0%, #ffeee7 100%);
+    border: 2px solid #f07850;
+    border-radius: 0 12px 12px 0;
+  }
+
+  .step-mes {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .s1 .step-mes { color: #2a9e42; }
+  .s2 .step-mes { color: #7040c0; }
+  .s3 .step-mes { color: #c05030; }
+
+  .step-num {
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .s1 .step-num { color: #3dc455; }
+  .s2 .step-num { color: #9060d0; }
+
+  .step-off {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  .s1 .step-off { color: #3dc455; }
+  .s2 .step-off { color: #9060d0; }
+
+  .step-full {
+    font-size: 24px;
+    font-weight: 900;
+    color: #f07850;
+    line-height: 1.15;
+  }
+
+  .step-desc {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .s1 .step-desc { color: #4a8c58; }
+  .s2 .step-desc { color: #7050a0; }
+  .s3 .step-desc { color: #a06050; }
+
+  /* ── CONTRATO ── */
+  .contrato {
+    margin: 0 40px 8px;
+    background: #f8f7ff;
+    border: 1px solid #e0d8f0;
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #9090b0;
+  }
+
+  .contrato strong { color: #7050b0; }
+
+  /* ── BODY TEXT ── */
+  .body-copy {
+    padding: 28px 40px 8px;
+    text-align: center;
+  }
+
+  .body-copy p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  .body-copy strong { color: #333; }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 24px 40px 48px;
+    text-align: center;
+  }
+
+  .cta-deadline {
+    font-size: 13px;
+    font-weight: 800;
+    color: #f07850;
+    margin-bottom: 20px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #50dc64 0%, #3ab84e 100%);
+    color: #ffffff;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    text-decoration: none;
+    padding: 18px 44px;
+    border-radius: 50px;
+    box-shadow: 0 8px 24px rgba(61,196,85,0.30);
+    letter-spacing: 0.2px;
+  }
+
+  .cta-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #aaa;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: #f0eef8;
+    margin: 0 40px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 28px 40px 32px;
+    text-align: center;
+    background: #faf9ff;
+  }
+
+  .footer-logo {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: #ddd;
+    margin-bottom: 12px;
+  }
+
+  .footer-logo .you { color: #a0e8b0; }
+
+  .footer p {
+    font-size: 11px;
+    color: #bbb;
+    line-height: 1.7;
+  }
+
+  .footer a { color: #aaa; text-decoration: underline; }
+
+  .footer .unsubscribe {
+    margin-top: 14px;
+    font-size: 10px;
+    color: #ccc;
+  }
+
+  @media only screen and (max-width: 480px) {
+    .header { padding: 24px; }
+    .hero { padding: 32px 20px 28px; }
+    .hero-headline { font-size: 26px; }
+    .impl-wrap { padding: 0 20px; }
+    .implantacao { flex-direction: column; text-align: center; gap: 8px; }
+    .oferta { padding: 28px 16px 24px; }
+    .steps-table, .steps-table tbody, .steps-table tr { display: block; }
+    .step-cell, .step-cell.s1, .step-cell.s2, .step-cell.s3 {
+      display: block; width: 100%; margin-bottom: 10px;
+      border-radius: 10px; border: 2px solid;
+    }
+    .s1 { border-color: #50dc64; }
+    .s2 { border-color: #a070d8; }
+    .s3 { border-color: #f07850; }
+    .contrato { margin: 0 20px 8px; }
+    .body-copy { padding: 20px 20px 8px; }
+    .cta-section { padding: 20px 20px 40px; }
+    .divider { margin: 0 20px; }
+    .footer { padding: 24px 20px; }
+  }
+</style>
 </head>
+<body>
+<div class="wrapper">
+  <div class="container">
 
-<body style="font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F5F5DC; color: #333333; margin: 0; padding: 0;">
-  <div style="max-width: 680px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; padding: 30px 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    
-    <h1 style="color: #6B2C91; text-align: center; font-size: 32px; margin-bottom: 10px; font-weight: 800; margin-top: 0;">YOU RH</h1>
-    
-    <p style="line-height: 1.6; font-size: 15px; color: #4a5568; margin: 20px 0;">💚 Oi{{#if contact.name}}, {{contact.name}}{{else}}!{{/if}}</p>
-
-    <p style="line-height: 1.6; font-size: 15px; color: #4a5568; margin: 16px 0;">
-      Vi que você solicitou uma <strong style="color: #00D084;">demonstração da YOU RH</strong> há algum tempo, mas acabamos não conseguindo conectar para mostrar como a plataforma pode transformar sua gestão de pessoas.
-    </p>
-
-    <p style="line-height: 1.6; font-size: 15px; color: #4a5568; margin: 16px 0;">
-      Ainda faz sentido conversarmos sobre como simplificar seu RH com recrutamento inteligente, avaliação de desempenho e universidade corporativa em um só lugar?
-    </p>
-
-    <div style="text-align: center; margin: 24px 0;">
-      <a href="https://calendly.com/yourh-demo" style="display: inline-block; background-color: #00D084; color: #ffffff; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: bold; text-align: center;">Sim, quero agendar minha demo →</a>
+    <!-- HEADER -->
+    <div class="header">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMzAwIDgwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcC1sb2dvMiI+CiAgICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iODAiLz4KICAgIDwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGlkPSJsb2dvMiIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtbG9nbzIpIj4KICAgIDxnIGlkPSJHcnVwb18xNjE4IiBkYXRhLW5hbWU9IkdydXBvIDE2MTgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwMTcgMTA3MzQuMzY0KSI+CiAgICAgIAogICAgICA8ZyBpZD0iT05FX1BBR0VfWW91UkgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01MDE3IC0xMDcxMi42MDIpIj4KICAgICAgICA8cGF0aCBpZD0iQ2FtaW5ob181ODc2IiBkYXRhLW5hbWU9IkNhbWluaG8gNTg3NiIgZD0iTTUwLjk0NCw1LjE2MlYxMS44N2w4LjYxNS0uNDY2QzQzLjY3OCwyOC41NDIsMzcuMiwzNS44LDMwLjE2NCwzNS44Yy01LjYxMywwLTguMjM1LTMuNi05LjM4My03LjUyMiwxNS40NDItLjUzOCwyMC43MjQtOS45ODQsMjAuNzI0LTE1LjkwNkM0MS41MDUsNi41MjcsMzguMDcxLDAsMjguNjI4LDBjLTEwLjIxLDAtMTUuMjIyLDEwLjEyNy0xNS45LDE5LjkxQTkuNDM1LDkuNDM1LDAsMCwxLDcuMywxMSwxOC44NDYsMTguODQ2LDAsMCwxLDguNywzLjhDNywzLjEyNiwxLjgxNiwxLjM3NCwxLjgxNiwxLjM3NEEzMi44NTQsMzIuODU0LDAsMCwwLDAsMTEuMzg3LDE2LjU4NCwxNi41ODQsMCwwLDAsMTMuMTI3LDI3LjZjMS44NDgsOS44ODksOC44NDEsMTUuMTEzLDE3LjAzNywxNS4xMTMsMTAuNjEyLDAsMTcuODY2LTguOTc1LDM0LjU4NS0yNi43NDlsLS41NCw5LjE3MWg2LjcwOFY1LjE2Mkg1MC45NDRaTTI4LjUsNy40NzNjMy43NjgsMCw1LjQwOSwyLjUsNS40MDksNS4zMjIsMCw0LjEtNC44MDgsOC43MjktMTMuMjU1LDguNzI5LS4yMjYsMC0uNDQ5LDAtLjY3LS4wMUMyMC4xNTQsMTMuNSwyMy4yNzMsNy40NzMsMjguNSw3LjQ3MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwKSIgZmlsbD0iIzYxZGU3NSIvPgogICAgICAgIDxwYXRoIGlkPSJDYW1pbmhvXzU4NzciIGRhdGEtbmFtZT0iQ2FtaW5obyA1ODc3IiBkPSJNMTcwLjIxMSw3LjQ4NmMtNS4xODcsMTIuOTY5LTEwLjgsMjUuODY4LTE0Ljg2MiwzNS44MjMtNC41NTcsMTAuNzI1LTguODMzLDE2LjQtMTUuOTgzLDE2LjQtNS4wNDcsMC04LjQ4My0yLjEtMTAuMzc2LTUuNDY4bDguNDEzLTcuMDEuODQxLjA3Yy4zNTEsMy4yMjUsMS45NjMsNS42NzgsNC44MzgsNS42NzgsNC4xMzYsMCw2LjY1OS00LDcuOTIxLTguMjcyLTIuMjQzLDAtNi4zNzktLjE0LTguNjIyLS40MjEtMy44NTYtMTEuODQ3LTkuMjU0LTI2LjI4OS0xMy43NDEtMzYuOGE5Ni45MzYsOTYuOTM2LDAsMCwwLDE1LjYzNCwwYzIuMzE0LDguOTc0LDUuNjA4LDIwLjY4MSw4LjY5MywzMC4zNTUsMi44NzQtMTAuNDQ1LDUuNDY4LTIyLjc4Myw2LjgtMzAuMzU1YTY1LjAxNCw2NS4wMTQsMCwwLDAsMTAuNDQ1LDAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zOS44NzcgLTIuMzIxKSIgZmlsbD0iI2ZmZiIvPgogICAgICAgIDxwYXRoIGlkPSJDYW1pbmhvXzU4NzgiIGRhdGEtbmFtZT0iQ2FtaW5obyA1ODc4IiBkPSJNMTg2Ljk1NiwyNS4xYzAtMTEuNSw3Ljc4MS0xOS4xMzgsMjAuNjExLTE5LjEzOHMyMC42OCw3LjY0MSwyMC42OCwxOS4xMzhjMCwxMS43MDctNy44NTIsMTkuNTU5LTIwLjY4LDE5LjU1OVMxODYuOTU2LDM2LjgwOCwxODYuOTU2LDI1LjFtMjYuNDI5LS4yOGMwLTEyLjQ3OS0yLjAzMy0xNi40NzUtNS44MTktMTYuNDc1LTMuNjQ1LDAtNS44ODksNC4wNjYtNS44ODksMTYuNzU1LDAsMTMuMDM5LDIuMjQ0LDE3LjEwNSw1Ljk2LDE3LjEwNSwzLjY0NSwwLDUuNzQ4LTQuMTM2LDUuNzQ4LTE3LjM4NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTU3Ljk1NSAtMS44NDgpIiBmaWxsPSIjZmZmIi8+CiAgICAgICAgPHBhdGggaWQ9IkNhbWluaG9fNTg3OSIgZGF0YS1uYW1lPSJDYW1pbmhvIDU4NzkiIGQ9Ik0yODkuNzU0LDQ0LjE1aC01Ljg4OGwtNi44LTkuMzI0Yy0xLjYxMyw2LjE2OS02LjIzOSwxMC4zMDUtMTMuMDQsMTAuMzA1LTcuMDgsMC0xMi41NDktMy42NDUtMTIuNjE4LTE1LjE0Mi0uMDctOC45NzMsMC0xNS4zNTMtLjE0LTIyLjVhOTcuMzc3LDk3LjM3NywwLDAsMCwxNC4zLDBjLS4wNywxMy4xNzksMCwxMi4yLjE0LDIyLjI5My4wNyw3LjI5MSwxLjA1Miw5Ljg4NSwzLjg1Niw5LjgxNSwzLjcxNi0uMDcsNS45NTktNC42MjcsNS45NTktMTMuNjcsMC05LjUzNCwwLTExLjU2Ny0uMjEtMTguNDM3YTk5LjI5MSw5OS4yOTEsMCwwLDAsMTQuNDQxLDBjLS4zNSwxMi40MDgtLjQyLDI0LjI1NiwwLDM2LjY2NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTc3Ljg5MSAtMi4zMjEpIiBmaWxsPSIjZmZmIi8+CiAgICAgICAgPHBhdGggaWQ9IkNhbWluaG9fNTg4MCIgZGF0YS1uYW1lPSJDYW1pbmhvIDU4ODAiIGQ9Ik0zNjQuMjMsNDQuMTA1YTYyLjg5Miw2Mi44OTIsMCwwLDEtMTQuNTMzLDAsMTA5Ljg5LDEwOS44OSwwLDAsMC0xMC42ODUtMTMuNTcxYzAsNC40MzUuMDUzLDguOTc2LjE2LDEzLjU3MWE0MC4yNCw0MC4yNCwwLDAsMS0xMS4zMjcsMGMuMjY3LTEyLjUuMjY3LTIzLjU2MiwwLTM2Ljc2QTk0LjYsOTQuNiwwLDAsMSwzNDIuMTA5LDYuMDFjNC43LDAsMTguOTE0LjU4OCwxOC45MTQsMTEuNDM0LDAsOC43MDktMTAuMjA1LDEyLjgyMy0xOS4zNDIsMTIuNjYzYTExMCwxMTAsMCwwLDAsMTIuNSwxLjZjMi42NzIsMy40MTksNS45ODQsNy45NjEsMTAuMDQ1LDEyLjRNMzM4Ljk1NywyOC4xM2EyMy41MywyMy41MywwLDAsMCwyLjQuMTZjNC4zMjgsMCw3LjQ4LTIuNjcyLDcuNDgtMTAuMjA1LDAtNy40MjctMi45MzktOS43NzctNi44MzktOS43NzctLjc0OCwwLTEuNzY0LjEwNy0yLjgzMi4yMTQtLjE2LDYuMzU4LS4yMTQsMTIuOTI5LS4yMTQsMTkuNjA5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAxLjYyOSAtMS44NjMpIiBmaWxsPSIjZmZmIi8+CiAgICAgICAgPHBhdGggaWQ9IkNhbWluaG9fNTg4MSIgZGF0YS1uYW1lPSJDYW1pbmhvIDU4ODEiIGQ9Ik00MTkuMSw0NC4yNTZhNDUuMDYzLDQ1LjA2MywwLDAsMS0xMS4zOCwwYy4xMDctNS44MjQuMjEzLTExLjY0Ny4yMTMtMTcuNDcyLTQuMTY3LS4xMDYtOC40NDItLjEwNi0xMi41NTUsMCwwLDUuODI0LjEwNiwxMS42NDguMjE0LDE3LjQ3MmE0NS4wNjIsNDUuMDYyLDAsMCwxLTExLjM4LDBjLjI2Ny0xMi40NDkuMjY3LTI0Ljk1MSwwLTM3LjRhNDUuMDYyLDQ1LjA2MiwwLDAsMSwxMS4zOCwwYy0uMTA4LDUuNjEtLjE2MSwxMS4yMi0uMjE0LDE2LjgzLDQuMTE0LjEwNyw4LjM4OC4xMDcsMTIuNTU1LDAtLjA1My01LjYxLS4xMDYtMTEuMjItLjIxMy0xNi44M2E0NS4wNjIsNDUuMDYyLDAsMCwxLDExLjM4LDBjLS4yNjcsMTIuNDQ5LS4yNjcsMjQuOTUxLDAsMzcuNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTExOS4xMDMgLTIuMDEzKSIgZmlsbD0iI2ZmZiIvPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K" alt="YouRH" style="height:44px; width:auto; display:block; margin:0 auto 12px;" />
+      <div><span class="header-tag">✦ Condição Especial · Março 2026</span></div>
     </div>
 
-    <div style="background-color: #F5F5DC; border-left: 4px solid #6B2C91; padding: 20px; border-radius: 8px; margin: 24px 0;">
-      <h3 style="color: #6B2C91; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0; font-weight: 700;">🚀 O que você vai ver na demo:</h3>
-      <ul style="margin: 0; padding-left: 20px; color: #4a5568; font-size: 14px; line-height: 1.5;">
-        <li style="margin-bottom: 6px;">Recrutamento e seleção com banco de talentos inteligente</li>
-        <li style="margin-bottom: 6px;">Avaliação 360° e PDI automatizado</li>
-        <li>Universidade Corporativa com <strong style="color: #00D084;">+450 cursos</strong> prontos</li>
-      </ul>
-    </div>
-
-    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
-      <p style="color: #718096; font-size: 14px; margin-bottom: 12px; line-height: 1.6; margin-top: 0;">
-        Não é prioridade no momento?
-      </p>
-      <a href="{{workflow_url}}" style="display: inline-block; color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 14px; border-bottom: 1px solid #FF6B35; padding-bottom: 2px;">Me avise quando for melhor</a>
-    </div>
-
-    <div style="background-color: #6B2C91; margin: 40px -40px -30px -40px; padding: 30px 40px; border-radius: 0 0 12px 12px; text-align: center;">
-      <p style="margin: 0 0 8px 0; font-weight: 600; color: #ffffff; font-size: 13px; line-height: 1.6;">YOU RH</p>
-      <p style="margin: 0; font-size: 12px; color: #F5F5DC; line-height: 1.6;">
-        Transformar e desenvolver pessoas é o nosso negócio<br>
-        <a href="{{unsubscribe_url}}" style="color: #F5F5DC; text-decoration: underline;">Cancelar inscrição</a> • 
-        <a href="https://yourh.com.br" style="color: #F5F5DC; text-decoration: underline;">yourh.com.br</a>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="urgency-badge">⚡ Válido apenas em março · últimas vagas</div>
+      <div class="hero-headline">
+        Comece a usar o YouRH<br>
+        <span class="green">pelo menor custo possível</span>
+      </div>
+      <p class="hero-sub">
+        Condição exclusiva para empresas que querem <strong>iniciar este mês</strong>, com entrada facilitada e suporte completo desde o primeiro dia.
       </p>
     </div>
+
+    <!-- IMPLANTAÇÃO -->
+    <div class="impl-wrap">
+      <div class="implantacao">
+        <div class="impl-icon">🎯</div>
+        <div>
+          <div class="impl-title">30% OFF na Implantação</div>
+          <div class="impl-sub">Além dos descontos mensais, você já economiza desde o setup inicial.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFERTA -->
+    <div class="oferta">
+      <div class="section-eyebrow">Como funciona a condição de março</div>
+      <table class="steps-table" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="step-cell s1">
+            <div class="step-mes">1º Mês</div>
+            <div class="step-num">90</div>
+            <div class="step-off">% OFF</div>
+            <div class="step-desc">Quase de graça para rodar com a operação real</div>
+          </td>
+          <td class="step-cell s2">
+            <div class="step-mes">2º Mês</div>
+            <div class="step-num">70</div>
+            <div class="step-off">% OFF</div>
+            <div class="step-desc">Ainda com desconto enquanto sua equipe se adapta</div>
+          </td>
+          <td class="step-cell s3">
+            <div class="step-mes">3º Mês +</div>
+            <div class="step-full">Valor<br>cheio</div>
+            <div class="step-desc">Plataforma consolidada e ROI já visível</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- CONTRATO -->
+    <div class="contrato">
+      📋 Contrato de <strong>14 meses</strong> · Oferta válida para contratos fechados em março
+    </div>
+
+    <!-- BODY COPY -->
+    <div class="body-copy">
+      <p>Nos dois primeiros meses, você coloca a <strong>gestão de pessoas funcionando de verdade</strong>, com custo mínimo e acompanhamento especializado.</p>
+      <p>No 3º mês, sua operação já está consolidada e o retorno se torna evidente.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-deadline">⚠️ Essa condição encerra no último dia de março</div>
+      <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C+vi+o+email+e+quero+saber+mais+sobre+a+promo%C3%A7%C3%A3o+de+mar%C3%A7o." class="cta-btn">
+        Quero essa condição agora →
+      </a>
+      <div class="cta-note">Um especialista responde pelo WhatsApp</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMzAwIDgwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcC1sb2dvMiI+CiAgICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iODAiLz4KICAgIDwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGlkPSJsb2dvMiIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtbG9nbzIpIj4KICAgIDxnIGlkPSJHcnVwb18xNjE4IiBkYXRhLW5hbWU9IkdydXBvIDE2MTgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwMTcgMTA3MzQuMzY0KSI+CiAgICAgIAogICAgICA8ZyBpZD0iT05FX1BBR0VfWW91UkgiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01MDE3IC0xMDcxMi42MDIpIj4KICAgICAgICA8cGF0aCBpZD0iQ2FtaW5ob181ODc2IiBkYXRhLW5hbWU9IkNhbWluaG8gNTg3NiIgZD0iTTUwLjk0NCw1LjE2MlYxMS44N2w4LjYxNS0uNDY2QzQzLjY3OCwyOC41NDIsMzcuMiwzNS44LDMwLjE2NCwzNS44Yy01LjYxMywwLTguMjM1LTMuNi05LjM4My03LjUyMiwxNS40NDItLjUzOCwyMC43MjQtOS45ODQsMjAuNzI0LTE1LjkwNkM0MS41MDUsNi41MjcsMzguMDcxLDAsMjguNjI4LDBjLTEwLjIxLDAtMTUuMjIyLDEwLjEyNy0xNS45LDE5LjkxQTkuNDM1LDkuNDM1LDAsMCwxLDcuMywxMSwxOC44NDYsMTguODQ2LDAsMCwxLDguNywzLjhDNywzLjEyNiwxLjgxNiwxLjM3NCwxLjgxNiwxLjM3NEEzMi44NTQsMzIuODU0LDAsMCwwLDAsMTEuMzg3LDE2LjU4NCwxNi41ODQsMCwwLDAsMTMuMTI3LDI3LjZjMS44NDgsOS44ODksOC44NDEsMTUuMTEzLDE3LjAzNywxNS4xMTMsMTAuNjEyLDAsMTcuODY2LTguOTc1LDM0LjU4NS0yNi43NDlsLS41NCw5LjE3MWg2LjcwOFY1LjE2Mkg1MC45NDRaTTI4LjUsNy40NzNjMy43NjgsMCw1LjQwOSwyLjUsNS40MDksNS4zMjIsMCw0LjEtNC44MDgsOC43MjktMTMuMjU1LDguNzI5LS4yMjYsMC0uNDQ5LDAtLjY3LS4wMUMyMC4xNTQsMTMuNSwyMy4yNzMsNy40NzMsMjguNSw3LjQ3MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwKSIgZmlsbD0iIzYxZGU3NSIvPgogICAgICAgIDxwYXRoIGlkPSJDYW1pbmhvXzU4NzciIGRhdGEtbmFtZT0iQ2FtaW5obyA1ODc3IiBkPSJNMTcwLjIxMSw3LjQ4NmMtNS4xODcsMTIuOTY5LTEwLjgsMjUuODY4LTE0Ljg2MiwzNS44MjMtNC41NTcsMTAuNzI1LTguODMzLDE2LjQtMTUuOTgzLDE2LjQtNS4wNDcsMC04LjQ4My0yLjEtMTAuMzc2LTUuNDY4bDguNDEzLTcuMDEuODQxLjA3Yy4zNTEsMy4yMjUsMS45NjMsNS42NzgsNC44MzgsNS42NzgsNC4xMzYsMCw2LjY1OS00LDcuOTIxLTguMjcyLTIuMjQzLDAtNi4zNzktLjE0LTguNjIyLS40MjEtMy44NTYtMTEuODQ3LTkuMjU0LTI2LjI4OS0xMy43NDEtMzYuOGE5Ni45MzYsOTYuOTM2LDAsMCwwLDE1LjYzNCwwYzIuMzE0LDguOTc0LDUuNjA4LDIwLjY4MSw4LjY5MywzMC4zNTUsMi44NzQtMTAuNDQ1LDUuNDY4LTIyLjc4Myw2LjgtMzAuMzU1YTY1LjAxNCw2NS4wMTQsMCwwLDAsMTAuNDQ1LDAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zOS44NzcgLTIuMzIxKSIgZmlsbD0iIzFhMWEyZSIvPgogICAgICAgIDxwYXRoIGlkPSJDYW1pbmhvXzU4NzgiIGRhdGEtbmFtZT0iQ2FtaW5obyA1ODc4IiBkPSJNMTg2Ljk1NiwyNS4xYzAtMTEuNSw3Ljc4MS0xOS4xMzgsMjAuNjExLTE5LjEzOHMyMC42OCw3LjY0MSwyMC42OCwxOS4xMzhjMCwxMS43MDctNy44NTIsMTkuNTU5LTIwLjY4LDE5LjU1OVMxODYuOTU2LDM2LjgwOCwxODYuOTU2LDI1LjFtMjYuNDI5LS4yOGMwLTEyLjQ3OS0yLjAzMy0xNi40NzUtNS44MTktMTYuNDc1LTMuNjQ1LDAtNS44ODksNC4wNjYtNS44ODksMTYuNzU1LDAsMTMuMDM5LDIuMjQ0LDE3LjEwNSw1Ljk2LDE3LjEwNSwzLjY0NSwwLDUuNzQ4LTQuMTM2LDUuNzQ4LTE3LjM4NSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTU3Ljk1NSAtMS44NDgpIiBmaWxsPSIjMWExYTJlIi8+CiAgICAgICAgPHBhdGggaWQ9IkNhbWluaG9fNTg3OSIgZGF0YS1uYW1lPSJDYW1pbmhvIDU4NzkiIGQ9Ik0yODkuNzU0LDQ0LjE1aC01Ljg4OGwtNi44LTkuMzI0Yy0xLjYxMyw2LjE2OS02LjIzOSwxMC4zMDUtMTMuMDQsMTAuMzA1LTcuMDgsMC0xMi41NDktMy42NDUtMTIuNjE4LTE1LjE0Mi0uMDctOC45NzMsMC0xNS4zNTMtLjE0LTIyLjVhOTcuMzc3LDk3LjM3NywwLDAsMCwxNC4zLDBjLS4wNywxMy4xNzksMCwxMi4yLjE0LDIyLjI5My4wNyw3LjI5MSwxLjA1Miw5Ljg4NSwzLjg1Niw5LjgxNSwzLjcxNi0uMDcsNS45NTktNC42MjcsNS45NTktMTMuNjcsMC05LjUzNCwwLTExLjU2Ny0uMjEtMTguNDM3YTk5LjI5MSw5OS4yOTEsMCwwLDAsMTQuNDQxLDBjLS4zNSwxMi40MDgtLjQyLDI0LjI1NiwwLDM2LjY2NCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTc3Ljg5MSAtMi4zMjEpIiBmaWxsPSIjMWExYTJlIi8+CiAgICAgICAgPHBhdGggaWQ9IkNhbWluaG9fNTg4MCIgZGF0YS1uYW1lPSJDYW1pbmhvIDU4ODAiIGQ9Ik0zNjQuMjMsNDQuMTA1YTYyLjg5Miw2Mi44OTIsMCwwLDEtMTQuNTMzLDAsMTA5Ljg5LDEwOS44OSwwLDAsMC0xMC42ODUtMTMuNTcxYzAsNC40MzUuMDUzLDguOTc2LjE2LDEzLjU3MWE0MC4yNCw0MC4yNCwwLDAsMS0xMS4zMjcsMGMuMjY3LTEyLjUuMjY3LTIzLjU2MiwwLTM2Ljc2QTk0LjYsOTQuNiwwLDAsMSwzNDIuMTA5LDYuMDFjNC43LDAsMTguOTE0LjU4OCwxOC45MTQsMTEuNDM0LDAsOC43MDktMTAuMjA1LDEyLjgyMy0xOS4zNDIsMTIuNjYzYTExMCwxMTAsMCwwLDAsMTIuNSwxLjZjMi42NzIsMy40MTksNS45ODQsNy45NjEsMTAuMDQ1LDEyLjRNMzM4Ljk1NywyOC4xM2EyMy41MywyMy41MywwLDAsMCwyLjQuMTZjNC4zMjgsMCw3LjQ4LTIuNjcyLDcuNDgtMTAuMjA1LDAtNy40MjctMi45MzktOS43NzctNi44MzktOS43NzctLjc0OCwwLTEuNzY0LjEwNy0yLjgzMi4yMTQtLjE2LDYuMzU4LS4yMTQsMTIuOTI5LS4yMTQsMTkuNjA5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAxLjYyOSAtMS44NjMpIiBmaWxsPSIjMWExYTJlIi8+CiAgICAgICAgPHBhdGggaWQ9IkNhbWluaG9fNTg4MSIgZGF0YS1uYW1lPSJDYW1pbmhvIDU4ODEiIGQ9Ik00MTkuMSw0NC4yNTZhNDUuMDYzLDQ1LjA2MywwLDAsMS0xMS4zOCwwYy4xMDctNS44MjQuMjEzLTExLjY0Ny4yMTMtMTcuNDcyLTQuMTY3LS4xMDYtOC40NDItLjEwNi0xMi41NTUsMCwwLDUuODI0LjEwNiwxMS42NDguMjE0LDE3LjQ3MmE0NS4wNjIsNDUuMDYyLDAsMCwxLTExLjM4LDBjLjI2Ny0xMi40NDkuMjY3LTI0Ljk1MSwwLTM3LjRhNDUuMDYyLDQ1LjA2MiwwLDAsMSwxMS4zOCwwYy0uMTA4LDUuNjEtLjE2MSwxMS4yMi0uMjE0LDE2LjgzLDQuMTE0LjEwNyw4LjM4OC4xMDcsMTIuNTU1LDAtLjA1My01LjYxLS4xMDYtMTEuMjItLjIxMy0xNi44M2E0NS4wNjIsNDUuMDYyLDAsMCwxLDExLjM4LDBjLS4yNjcsMTIuNDQ5LS4yNjcsMjQuOTUxLDAsMzcuNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTExOS4xMDMgLTIuMDEzKSIgZmlsbD0iIzFhMWEyZSIvPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K" alt="YouRH" style="height:28px; width:auto; display:block; margin:0 auto 12px; opacity:0.5;" />
+      <p>Você está recebendo este email por ter demonstrado interesse em nossas soluções.</p>
+      <p><a href="#">Ver no navegador</a> · <a href="#">Política de Privacidade</a></p>
+      <div class="unsubscribe">
+        Não quer mais receber nossas comunicações? <a href="#">Clique aqui para descadastrar.</a>
+      </div>
+    </div>
+
   </div>
+</div>
 </body>
 </html>
